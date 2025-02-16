@@ -13,7 +13,8 @@ interface CampaignDetailPageProps {
 export default function CampaignDetailPage({
   params,
 }: CampaignDetailPageProps) {
-  const campaign = campaigns.find((c) => c.id.toString() === params.id);
+  const id = String(params.id); // 🛠 id를 문자열로 변환
+  const campaign = campaigns.find((c) => c.id.toString() === id);
 
   if (!campaign) return notFound();
 
