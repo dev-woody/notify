@@ -2,11 +2,11 @@
 
 import { notFound, useSearchParams } from "next/navigation";
 import { campaigns } from "../data";
-import CampaignDetail from "./campaignDetail";
 import { Separator } from "@/components/ui/separator";
 import CampaignSidebar from "./campaignSlider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CampaignReview from "./campaignReview";
+import CampaignDetail from "./campaignDetail";
 
 export default function CampaignDetailPage() {
   const params = useSearchParams();
