@@ -18,11 +18,11 @@ export default function Home() {
           </p> */}
           <div className="flex justify-center">
             <Link href="/company">
-              <Button className="inline-flex text-white md:w-[30vw] bg-indigo-500 border-0 py-10 px-6 focus:outline-none hover:bg-indigo-600 rounded justify-center text-lg">
+              <Button className="inline-flex text-white md:w-[30vw] bg-gray-500 border-0 py-10 px-6 focus:outline-none hover:bg-gray-600 rounded justify-center text-lg">
                 사장님용
               </Button>
             </Link>
-            <Link href="/reviewer">
+            <Link href="/review">
               <Button className="ml-4 inline-flex text-gray-700 md:w-[30vw] bg-gray-100 border-0 py-10 px-6 focus:outline-none hover:bg-gray-200 rounded justify-center text-lg">
                 리뷰어용
               </Button>
