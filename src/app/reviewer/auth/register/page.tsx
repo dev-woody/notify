@@ -1,6 +1,6 @@
 import AuthLayout from "../auth-layout";
 import { SignUpForm } from "@/components/reviewer/signUp";
-import { Card } from "@/components/common/calendar/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function SignUp() {

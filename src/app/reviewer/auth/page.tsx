@@ -2,7 +2,7 @@
 
 import { UserAuthForm } from "@/components/reviewer/signIn";
 import AuthLayout from "./auth-layout";
-import { Card } from "@/components/common/calendar/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 export default function SignIn() {
   return (
