@@ -41,14 +41,14 @@ export default function CampaignDetail({ campaign }: CampaignDetailProps) {
           <Image
             src={campaign.images[0]}
             alt={campaign.title}
-            width={600}
+            width={0}
             height={400}
             className="rounded-md"
           />
           <Image
             src={campaign.images[1]}
             alt={campaign.title}
-            width={600}
+            width={0}
             height={400}
             className="rounded-md"
           />
