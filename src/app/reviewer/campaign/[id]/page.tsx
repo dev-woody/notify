@@ -50,3 +50,10 @@ export default function CampaignDetailPage({
     </div>
   );
 }
+
+// ✅ `generateStaticParams`를 추가하여 정적 경로 생성 (필수)
+export async function generateStaticParams() {
+  return campaigns.map((campaign) => ({
+    id: campaign.id.toString(),
+  }));
+}
