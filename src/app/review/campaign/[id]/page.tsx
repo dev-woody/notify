@@ -16,7 +16,7 @@ export default function CampaignDetailPage() {
   if (!campaign) return notFound();
 
   return (
-    <div className="flex md:flex-row flex-col md:space-x-8 space-y-4 py-10">
+    <div className="container flex md:flex-row flex-col md:space-x-8 space-y-4 py-10">
       <div className="flex flex-col mx-auto md:pl-10 px-4 flex-1">
         {/* 타이틀 */}
         <h1 className="text-2xl font-bold">{campaign.title}</h1>

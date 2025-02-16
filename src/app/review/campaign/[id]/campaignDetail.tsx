@@ -43,14 +43,14 @@ export default function CampaignDetail({ campaign }: CampaignDetailProps) {
             alt={campaign.title}
             width={0}
             height={400}
-            className="rounded-md"
+            className="rounded-md flex-1"
           />
           <Image
             src={campaign.images[1]}
             alt={campaign.title}
             width={0}
             height={400}
-            className="rounded-md"
+            className="rounded-md flex-1"
           />
         </div>
         <Image
