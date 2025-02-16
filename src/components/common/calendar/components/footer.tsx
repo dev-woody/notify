@@ -1,6 +1,6 @@
 import { DarkModeToggle } from "./dark-mode-toggle";
 import Link from "next/link";
-import { Separator } from "./ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
   return (

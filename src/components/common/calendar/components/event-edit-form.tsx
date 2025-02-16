@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import React, { useEffect } from 'react'
-import { z } from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { HexColorPicker } from 'react-colorful'
-import { useToast } from '@/hooks/use-toast'
+import React, { useEffect } from "react";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { HexColorPicker } from "react-colorful";
+import { useToast } from "@/hooks/use-toast";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,7 +15,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
+} from "@/components/ui/alert-dialog";
 import {
   Form,
   FormControl,
@@ -23,44 +23,48 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { useEvents } from '../context/events-context'
-import { CalendarEvent } from '../utils/data'
-import { DateTimePicker } from './date-picker'
-import { Button } from './ui/button'
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { Textarea } from './ui/textarea'
-import { ToastAction } from './ui/toast'
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useEvents } from "../context/events-context";
+import { CalendarEvent } from "../utils/data";
+import { DateTimePicker } from "./date-picker";
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Textarea } from "@/components/ui/textarea";
+import { ToastAction } from "@/components/ui/toast";
 
 const eventEditFormSchema = z.object({
   id: z.string(),
   title: z
-    .string({ required_error: 'Please enter a title.' })
-    .min(1, { message: 'Must provide a title for this event.' }),
+    .string({ required_error: "Please enter a title." })
+    .min(1, { message: "Must provide a title for this event." }),
   description: z
-    .string({ required_error: 'Please enter a description.' })
-    .min(1, { message: 'Must provide a description for this event.' }),
+    .string({ required_error: "Please enter a description." })
+    .min(1, { message: "Must provide a description for this event." }),
   start: z.date({
-    required_error: 'Please select a start time',
+    required_error: "Please select a start time",
     invalid_type_error: "That's not a date!",
   }),
   end: z.date({
-    required_error: 'Please select an end time',
+    required_error: "Please select an end time",
     invalid_type_error: "That's not a date!",
   }),
   color: z
-    .string({ required_error: 'Please select an event color.' })
-    .min(1, { message: 'Must provide a title for this event.' }),
-})
+    .string({ required_error: "Please select an event color." })
+    .min(1, { message: "Must provide a title for this event." }),
+});
 
-type EventEditFormValues = z.infer<typeof eventEditFormSchema>
+type EventEditFormValues = z.infer<typeof eventEditFormSchema>;
 
 interface EventEditFormProps {
-  oldEvent?: CalendarEvent
-  event?: CalendarEvent
-  isDrag: boolean
-  displayButton: boolean
+  oldEvent?: CalendarEvent;
+  event?: CalendarEvent;
+  isDrag: boolean;
+  displayButton: boolean;
 }
 
 export function EventEditForm({
@@ -69,14 +73,14 @@ export function EventEditForm({
   isDrag,
   displayButton,
 }: EventEditFormProps) {
-  const { addEvent, deleteEvent } = useEvents()
-  const { eventEditOpen, setEventEditOpen } = useEvents()
+  const { addEvent, deleteEvent } = useEvents();
+  const { eventEditOpen, setEventEditOpen } = useEvents();
 
-  const { toast } = useToast()
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof eventEditFormSchema>>({
     resolver: zodResolver(eventEditFormSchema),
-  })
+  });
 
   const handleEditCancellation = () => {
     if (isDrag && oldEvent) {
@@ -87,13 +91,13 @@ export function EventEditForm({
         start: oldEvent.start,
         end: oldEvent.end,
         color: oldEvent.backgroundColor!,
-      }
+      };
 
-      deleteEvent(oldEvent.id)
-      addEvent(resetEvent)
+      deleteEvent(oldEvent.id);
+      addEvent(resetEvent);
     }
-    setEventEditOpen(false)
-  }
+    setEventEditOpen(false);
+  };
 
   useEffect(() => {
     form.reset({
@@ -103,8 +107,8 @@ export function EventEditForm({
       start: event?.start as Date,
       end: event?.end as Date,
       color: event?.backgroundColor,
-    })
-  }, [form, event])
+    });
+  }, [form, event]);
 
   async function onSubmit(data: EventEditFormValues) {
     const newEvent = {
@@ -114,19 +118,19 @@ export function EventEditForm({
       start: data.start,
       end: data.end,
       color: data.color,
-    }
-    deleteEvent(data.id)
-    addEvent(newEvent)
-    setEventEditOpen(false)
+    };
+    deleteEvent(data.id);
+    addEvent(newEvent);
+    setEventEditOpen(false);
 
     toast({
-      title: '이벤트 수정완료.',
+      title: "이벤트 수정완료.",
       action: (
-        <ToastAction altText={'Click here to dismiss notification'}>
+        <ToastAction altText={"Click here to dismiss notification"}>
           취소
         </ToastAction>
       ),
-    })
+    });
   }
 
   return (
@@ -134,8 +138,8 @@ export function EventEditForm({
       {displayButton && (
         <AlertDialogTrigger asChild>
           <Button
-            className='w-full sm:w-24 text-xs md:text-sm mb-1'
-            variant='default'
+            className="w-full sm:w-24 text-xs md:text-sm mb-1"
+            variant="default"
             onClick={() => setEventEditOpen(true)}
           >
             일정 수정
@@ -149,15 +153,15 @@ export function EventEditForm({
         </AlertDialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2.5'>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2.5">
             <FormField
               control={form.control}
-              name='title'
+              name="title"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>일정 타이틀</FormLabel>
                   <FormControl>
-                    <Input placeholder='타이틀을 입력하세요.' {...field} />
+                    <Input placeholder="타이틀을 입력하세요." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -165,14 +169,14 @@ export function EventEditForm({
             />
             <FormField
               control={form.control}
-              name='description'
+              name="description"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>메모</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder='메모를 입력하세요.'
-                      className='resize-none'
+                      placeholder="메모를 입력하세요."
+                      className="resize-none"
                       {...field}
                     />
                   </FormControl>
@@ -182,16 +186,16 @@ export function EventEditForm({
             />
             <FormField
               control={form.control}
-              name='start'
+              name="start"
               render={({ field }) => (
-                <FormItem className='flex flex-col'>
-                  <FormLabel htmlFor='datetime'>시작일</FormLabel>
+                <FormItem className="flex flex-col">
+                  <FormLabel htmlFor="datetime">시작일</FormLabel>
                   <FormControl>
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
                       hourCycle={12}
-                      granularity='minute'
+                      granularity="minute"
                     />
                   </FormControl>
                   <FormMessage />
@@ -200,16 +204,16 @@ export function EventEditForm({
             />
             <FormField
               control={form.control}
-              name='end'
+              name="end"
               render={({ field }) => (
-                <FormItem className='flex flex-col'>
-                  <FormLabel htmlFor='datetime'>마감일</FormLabel>
+                <FormItem className="flex flex-col">
+                  <FormLabel htmlFor="datetime">마감일</FormLabel>
                   <FormControl>
                     <DateTimePicker
                       value={field.value}
                       onChange={field.onChange}
                       hourCycle={12}
-                      granularity='minute'
+                      granularity="minute"
                     />
                   </FormControl>
                   <FormMessage />
@@ -218,14 +222,14 @@ export function EventEditForm({
             />
             <FormField
               control={form.control}
-              name='color'
+              name="color"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>색상</FormLabel>
                   <FormControl>
                     <Popover>
-                      <PopoverTrigger asChild className='cursor-pointer'>
-                        <div className='flex flex-row w-full items-center space-x-2 pl-2'>
+                      <PopoverTrigger asChild className="cursor-pointer">
+                        <div className="flex flex-row w-full items-center space-x-2 pl-2">
                           <div
                             className={`w-5 h-5 rounded-full cursor-pointer`}
                             style={{ backgroundColor: field.value }}
@@ -233,9 +237,9 @@ export function EventEditForm({
                           <Input {...field} />
                         </div>
                       </PopoverTrigger>
-                      <PopoverContent className='flex mx-auto items-center justify-center'>
+                      <PopoverContent className="flex mx-auto items-center justify-center">
                         <HexColorPicker
-                          className='flex'
+                          className="flex"
                           color={field.value}
                           onChange={field.onChange}
                         />
@@ -246,15 +250,15 @@ export function EventEditForm({
                 </FormItem>
               )}
             />
-            <AlertDialogFooter className='pt-2'>
+            <AlertDialogFooter className="pt-2">
               <AlertDialogCancel onClick={() => handleEditCancellation()}>
                 취소
               </AlertDialogCancel>
-              <AlertDialogAction type='submit'>수정</AlertDialogAction>
+              <AlertDialogAction type="submit">수정</AlertDialogAction>
             </AlertDialogFooter>
           </form>
         </Form>
       </AlertDialogContent>
     </AlertDialog>
-  )
+  );
 }
