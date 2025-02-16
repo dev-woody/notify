@@ -10,11 +10,16 @@ interface CampaignDetailPageProps {
   params: { id: string };
 }
 
+export async function generateStaticParams() {
+  return campaigns.map((campaign) => ({
+    id: campaign.id.toString(),
+  }));
+}
+
 export default function CampaignDetailPage({
   params,
 }: CampaignDetailPageProps) {
-  const id = String(params.id); // 🛠 id를 문자열로 변환
-  const campaign = campaigns.find((c) => c.id.toString() === id);
+  const campaign = campaigns.find((c) => c.id.toString() === params.id);
 
   if (!campaign) return notFound();
 
