@@ -1,10 +1,5 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/common/calendar/components/ui/card";
 
 interface CampaignDetailProps {
   campaign: {
