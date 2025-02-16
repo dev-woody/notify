@@ -1,3 +1,5 @@
+"use client";
+
 import { notFound, useSearchParams } from "next/navigation";
 import { campaigns } from "../data";
 import CampaignDetail from "./campaignDetail";
