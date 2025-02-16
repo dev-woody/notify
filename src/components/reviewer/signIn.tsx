@@ -101,7 +101,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               className="mt-2 bg-gray-300 text-gray-800"
               disabled={isLoading}
             >
-              <Link href="/reviewer/auth/register">회원 가입하기</Link>
+              <Link href="/review/auth/register">회원 가입하기</Link>
             </Button>
 
             <div className="relative my-2">

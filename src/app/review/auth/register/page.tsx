@@ -13,7 +13,7 @@ export default function SignUp() {
             모든 정보는 필수로 기입해주세요. <br />
             이미 계정이 있으신가요?{" "}
             <Link
-              href="/reviewer/auth"
+              href="/review/auth"
               className="underline underline-offset-4 hover:text-primary"
             >
               회원 인증

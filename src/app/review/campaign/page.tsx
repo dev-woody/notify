@@ -17,7 +17,7 @@ export default function CampaignList() {
     <div className="flex flex-wrap -m-4">
       {campaigns.map((item) => (
         <div key={item.id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <Link href={`/reviewer/campaign/${item.id}`}>
+          <Link href={`/review/campaign/${item.id}`}>
             <div className="block relative h-48 rounded overflow-hidden">
               <img
                 alt={item.title}
