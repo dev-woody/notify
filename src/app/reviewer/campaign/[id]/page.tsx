@@ -10,12 +10,6 @@ interface CampaignDetailPageProps {
   params: { id: string };
 }
 
-export async function generateStaticParams() {
-  return campaigns.map((campaign) => ({
-    id: campaign.id.toString(),
-  }));
-}
-
 export default function CampaignDetailPage({
   params,
 }: CampaignDetailPageProps) {
