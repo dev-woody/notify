@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import DialogComponent from "./dialog";
 
 export default function Compony() {

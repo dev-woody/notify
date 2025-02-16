@@ -17,8 +17,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "../ui/password-input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "../common/calendar/components/ui/label";
 
 // 🔹 1단계: 약관 동의 스키마
 const termsSchema = z.object({
