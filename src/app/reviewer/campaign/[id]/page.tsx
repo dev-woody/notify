@@ -6,13 +6,11 @@ import CampaignSidebar from "./campaignSlider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CampaignReview from "./campaignReview";
 
-interface CampaignDetailPageProps {
-  params: { id: string };
-}
-
 export default function CampaignDetailPage({
   params,
-}: CampaignDetailPageProps) {
+}: {
+  params: { id: string };
+}) {
   const campaign = campaigns.find((c) => c.id.toString() === params.id);
 
   if (!campaign) return notFound();
