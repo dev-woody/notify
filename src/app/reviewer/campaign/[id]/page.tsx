@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { campaigns } from "../data";
 import CampaignDetail from "./campaignDetail";
 import { Separator } from "@/components/ui/separator";
@@ -6,12 +6,11 @@ import CampaignSidebar from "./campaignSlider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CampaignReview from "./campaignReview";
 
-export default function CampaignDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const campaign = campaigns.find((c) => c.id.toString() === params.id);
+export default function CampaignDetailPage() {
+  const params = useSearchParams();
+
+  const campaignId = params.get("id");
+  const campaign = campaigns.find((c) => c.id.toString() === campaignId);
 
   if (!campaign) return notFound();
 
