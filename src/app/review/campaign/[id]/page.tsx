@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound, useSearchParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { campaigns } from "../data";
 import { Separator } from "@/components/ui/separator";
 import CampaignSidebar from "./campaignSlider";
@@ -9,10 +9,9 @@ import CampaignReview from "./campaignReview";
 import CampaignDetail from "./campaignDetail";
 
 export default function CampaignDetailPage() {
-  const params = useSearchParams();
+  const params = useParams();
 
-  const campaignId = params.get("id");
-  const campaign = campaigns.find((c) => c.id.toString() === campaignId);
+  const campaign = campaigns.find((c) => c.id.toString() === params.id);
 
   if (!campaign) return notFound();
 
