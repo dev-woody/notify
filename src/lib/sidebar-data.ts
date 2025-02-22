@@ -12,11 +12,11 @@ export const items = [
     icon: ListChecks
 
   },
-  {
-    title: "결제관리",
-    url: "/company/user/payment",
-    icon: CreditCard
-  },
+  // {
+  //   title: "결제관리",
+  //   url: "/company/user/payment",
+  //   icon: CreditCard
+  // },
   {
     title: "나의 순위 올리기",
     url: "/company/user/ranking",

@@ -46,20 +46,20 @@ export default function Ranking() {
           </div>
           <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-              <InstagramLogoIcon className=" w-12 h-12 mb-3 inline-block" />
-              <h2 className="title-font font-medium text-3xl text-gray-900">
-                1.4K
-              </h2>
-              <p className="leading-relaxed">인스타 조회수</p>
-            </div>
-          </div>
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
               <Star className=" w-12 h-12 mb-3 inline-block" />
               <h2 className="title-font font-medium text-3xl text-gray-900">
                 4.5
               </h2>
-              <p className="leading-relaxed">네이버 지도 평점</p>
+              <p className="leading-relaxed">방문자 리뷰</p>
+            </div>
+          </div>
+          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <InstagramLogoIcon className=" w-12 h-12 mb-3 inline-block" />
+              <h2 className="title-font font-medium text-3xl text-gray-900">
+                1.4K
+              </h2>
+              <p className="leading-relaxed">인스타 조회 수</p>
             </div>
           </div>
         </div>
