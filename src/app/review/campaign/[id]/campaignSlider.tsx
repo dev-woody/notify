@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Clipboard } from "lucide-react";
+import TermsDialog from "../components/dialog";
 
 interface CampaignDetailProps {
   campaign: {
@@ -54,9 +55,7 @@ export default function CampaignSidebar({ campaign }: CampaignDetailProps) {
 
         {/* 버튼 */}
         <div className="mt-4 flex space-x-2">
-          <Button className="bg-orange-500 text-white w-full text-lg">
-            신청하기
-          </Button>
+          <TermsDialog />
           <Button variant="outline">
             <Clipboard />
           </Button>

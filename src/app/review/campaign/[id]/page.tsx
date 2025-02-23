@@ -4,8 +4,7 @@ import { notFound, useParams } from "next/navigation";
 import { campaigns } from "../data";
 import { Separator } from "@/components/ui/separator";
 import CampaignSidebar from "./campaignSlider";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CampaignReview from "./campaignReview";
+
 import CampaignDetail from "./campaignDetail";
 
 export default function CampaignDetailPage() {
@@ -22,18 +21,19 @@ export default function CampaignDetailPage() {
         <h1 className="text-2xl font-bold">{campaign.title}</h1>
         <p className="text-gray-600">{campaign.subtitle}</p>
         <div className="mt-2 flex items-center space-x-2">
-          <span className="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
+          <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">
             {campaign.review}
           </span>
           <span className="bg-gray-500 text-white text-xs font-bold px-2 py-1 rounded">
             {campaign.type}
           </span>
         </div>
-        <Tabs defaultValue="info" className="mt-4">
+        <CampaignDetail campaign={campaign} />
+        {/* <Tabs defaultValue="info" className="mt-4">
           <TabsList className="grid md:w-[400px] grid-cols-2">
             <TabsTrigger value="info">캠페인 정보</TabsTrigger>
             <TabsTrigger value="review">신청자 목록</TabsTrigger>
-          </TabsList>
+          </TabsList> 
           <Separator className="md:block hidden" />
           <TabsContent value="info">
             <CampaignDetail campaign={campaign} />
@@ -41,7 +41,7 @@ export default function CampaignDetailPage() {
           <TabsContent value="review">
             <CampaignReview />
           </TabsContent>
-        </Tabs>
+        </Tabs>*/}
       </div>
       <Separator orientation="vertical" />
       <CampaignSidebar campaign={campaign} />

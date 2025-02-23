@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import TermsDialog from "../components/dialog";
 
 interface CampaignDetailProps {
   campaign: {
@@ -130,7 +131,7 @@ export default function CampaignDetail({ campaign }: CampaignDetailProps) {
         </CardContent>
       </Card>
 
-      {/* 추천 캠페인 */}
+      {/* 추천 캠페인
       <Card className="mt-6">
         <CardHeader>
           <CardTitle>🔥 추천 캠페인</CardTitle>
@@ -151,7 +152,7 @@ export default function CampaignDetail({ campaign }: CampaignDetailProps) {
             </div>
           ))}
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   );
 }
