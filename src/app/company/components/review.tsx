@@ -58,7 +58,7 @@ export default function InfluencerReviews() {
   };
 
   return (
-    <section className="container w-3/4 mx-auto px-6 py-20">
+    <section className="container mx-auto px-6 py-20">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
         {/* 왼쪽 텍스트 영역 */}
         <div className="text-left lg:col-span-1">

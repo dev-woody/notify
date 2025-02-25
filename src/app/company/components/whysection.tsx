@@ -1,7 +1,7 @@
 export default function WhyReviewPlace() {
   return (
     <section className="w-full py-20 bg-gray-900 text-white">
-      <div className="container w-3/4 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* 좌측: 이미지 */}
         <div className="relative flex justify-center">
           <img
