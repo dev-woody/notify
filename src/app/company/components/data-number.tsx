@@ -17,7 +17,7 @@ export default function DataNumber() {
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="text-indigo-500 w-12 h-12 mb-3 inline-block"
               viewBox="0 0 24 24"
             >
@@ -37,7 +37,7 @@ export default function DataNumber() {
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="text-indigo-500 w-12 h-12 mb-3 inline-block"
               viewBox="0 0 24 24"
             >
@@ -58,7 +58,7 @@ export default function DataNumber() {
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="text-indigo-500 w-12 h-12 mb-3 inline-block"
               viewBox="0 0 24 24"
             >
@@ -78,7 +78,7 @@ export default function DataNumber() {
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               className="text-indigo-500 w-12 h-12 mb-3 inline-block"
               viewBox="0 0 24 24"
             >

@@ -91,6 +91,7 @@ export default function PartnersSection() {
           >
             {[...partners, ...partners].map((partner, index) => (
               <img
+                key={index}
                 src={partner.image}
                 alt={partner.alt}
                 className="w-40 h-20 object-contain"

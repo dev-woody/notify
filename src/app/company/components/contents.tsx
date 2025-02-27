@@ -125,8 +125,15 @@ export default function Contents() {
           <div className="text-left space-y-20">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                {content[selectedTab].icons.map((icon: string) => {
-                  return <img src={icon} alt="icon" className="w-8 h-8" />;
+                {content[selectedTab].icons.map((icon: string, index) => {
+                  return (
+                    <img
+                      key={index}
+                      src={icon}
+                      alt="icon"
+                      className="w-8 h-8"
+                    />
+                  );
                 })}
               </div>
               <h3 className="text-3xl font-bold mb-4">
